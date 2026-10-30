@@ -1,69 +1,199 @@
-import Image from "next/image";
+
+
+const legends = [
+  {
+    name: "Lionel Messi",
+    era: "THE GREATEST",
+    number: "10",
+    image: "/images/messi-5.jpg",
+    description: "A generation-defining talent who made the extraordinary look effortless.",
+  },
+  {
+    name: "Xavi Hernández",
+    era: "THE MIDFIELD MAESTRO",
+    number: "6",
+    image: "/images/xavi.jpg",
+    description: "The rhythm, vision, and intelligence behind an unforgettable era.",
+  },
+  {
+    name: "Andrés Iniesta",
+    era: "THE ARTIST",
+    number: "8",
+    image: "/images/iniesta.jpg",
+    description: "Elegance and composure in the moments that mattered most.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main>
+      <nav className="navbar">
+        <a href="#" className="brand">
+          B<span>.</span> LEGACY
+        </a>
+
+        <div className="nav-links">
+          <a href="#about">Our Story</a>
+          <a href="#legends">Legends</a>
+          <a href="#legacy">Legacy</a>
+        </div>
+
+        <a href="#about" className="nav-cta">
+          Més que un club ↗
+        </a>
+      </nav>
+
+      <section className="hero">
+        <div className="hero-content">
+          <p className="eyebrow">
+            EST. 1899 · BARCELONA, CATALONIA
+          </p>
+
+          <h1>
+            MORE THAN
+            <br />
+            <span>A CLUB.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="hero-description">
+            A legacy written in passion.
+            A history built by legends.
+            A love that knows no boundaries.
+          </p>
+
+          <div className="hero-actions">
+            <a href="#about" className="button-primary">
+              Discover our story ↗
+            </a>
+
+            <a href="#legends" className="button-secondary">
+              Meet the legends
+            </a>
+          </div>
+
+          <div className="hero-caption">
+            <span>UNA HISTÒRIA. UNA PASSIÓ.</span>
+            <span>BARÇA, ALWAYS.</span>
+          </div>
+        </div>
+
+        <div className="hero-decoration" aria-hidden="true">
+          <span>1899</span>
+          <div className="decoration-line" />
+          <span>FCB</span>
+        </div>
+      </section>
+
+      <section id="about" className="about-section">
+        <p className="eyebrow">MORE THAN FOOTBALL</p>
+        <h2>
+          One club.
+          <br />
+          <span>Countless emotions.</span>
+        </h2>
+
+        <p>
+          Born in Barcelona in 1899, FC Barcelona represents
+          more than a game. It is a symbol of identity,
+          creativity, courage, and a philosophy passed
+          from one generation to the next.
+        </p>
+      </section>
+
+      
+      <section id="statistics" className="statistics-section">
+        <div className="statistics-heading">
+          <p className="eyebrow">THE NUMBERS BEHIND THE LEGACY</p>
+          <h2>
+            A legacy measured
+            <br />
+            <span>in greatness.</span>
+          </h2>
+          <p className="statistics-description">
+            More than a century of history, identity, and unforgettable
+            moments that shaped the world of football.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="statistics-grid">
+          <article className="stat-card">
+            <span className="stat-label">ESTABLISHED</span>
+            <p className="stat-number">1899</p>
+            <h3>Year Founded</h3>
+            <p className="stat-note">Born in Barcelona, Catalonia.</p>
+          </article>
+
+          <article className="stat-card">
+            <span className="stat-label">OUR HISTORY</span>
+            <p className="stat-number">125<span>+</span></p>
+            <h3>Years of History</h3>
+            <p className="stat-note">A legacy across generations.</p>
+          </article>
+
+          <article className="stat-card">
+            <span className="stat-label">THE GAME</span>
+            <p className="stat-number">11</p>
+            <h3>Players per Side</h3>
+            <p className="stat-note">One team, one shared purpose.</p>
+          </article>
+
+          <article className="stat-card">
+            <span className="stat-label">OUR IDENTITY</span>
+            <p className="stat-number">1</p>
+            <h3>Club. One Identity.</h3>
+            <p className="stat-note">Més que un club.</p>
+          </article>
         </div>
-      </main>
+      </section>
+
+
+<section id="legends" className="legends-section">
+  <div className="section-heading">
+    <div>
+      <p className="eyebrow">THE IMMORTALS</p>
+      <h2>Legends of Barça.</h2>
     </div>
+    <span>1899 — FOREVER</span>
+  </div>
+
+  <div className="legends-grid">
+    {legends.map((legend) => (
+      <article className="legend-card" key={legend.name}>
+        <img
+          className="legend-image"
+          src={legend.image}
+          alt={legend.name}
+        />
+
+        <div className="legend-overlay" />
+
+        <span className="legend-number">
+          {legend.number}
+        </span>
+
+        <div className="legend-info">
+          <p className="legend-era">{legend.era}</p>
+          <h3>{legend.name}</h3>
+          <p className="legend-description">
+            {legend.description}
+          </p>
+        </div>
+
+        <span className="legend-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </article>
+    ))}
+  </div>
+</section>
+
+      <footer id="legacy" className="footer">
+        <a href="#" className="brand">
+          B<span>.</span> LEGACY
+        </a>
+        <p>An independent fan-made tribute to FC Barcelona.</p>
+        <span>VISCA EL BARÇA.</span>
+      </footer>
+    </main>
   );
 }
