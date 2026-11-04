@@ -474,6 +474,214 @@ a {
   line-height: 1.7;
 }
 
+/* TIMELINE SECTION */
+
+.timeline-section {
+  padding: 120px 10%;
+  background: #0d111d;
+  border-top: 1px solid #ffffff15;
+}
+
+.timeline-list {
+  position: relative;
+  max-width: 900px;
+  margin: 80px auto 0;
+}
+
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 27px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--barca-red),
+    var(--barca-blue),
+    transparent
+  );
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 35px;
+  padding-bottom: 75px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: relative;
+  z-index: 1;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--barca-red);
+  border-radius: 50%;
+  background: var(--dark);
+  color: var(--barca-gold);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.timeline-content {
+  padding: 5px 0 0;
+}
+
+.timeline-label {
+  margin-bottom: 12px;
+  color: var(--barca-gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.timeline-year {
+  color: var(--barca-red);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.timeline-content h3 {
+  margin: 10px 0;
+  color: var(--text);
+  font-size: clamp(24px, 3vw, 36px);
+}
+
+.timeline-description {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* GALLERY SECTION */
+
+.gallery-section {
+  padding: 120px 10%;
+  background: var(--dark);
+  border-top: 1px solid #ffffff15;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 280px;
+  gap: 18px;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--surface);
+  border: 1px solid #ffffff18;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-card:nth-child(1),
+.gallery-card:nth-child(4) {
+  grid-row: span 2;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  border-color: #edbb0070;
+}
+
+.gallery-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-image {
+  transform: scale(1.06);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 11, 20, 0.05) 20%,
+    rgba(8, 11, 20, 0.85) 100%
+  );
+}
+
+.gallery-index {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  color: #ffffffb0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.gallery-info {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 24px;
+}
+
+.gallery-info p {
+  color: var(--barca-gold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.gallery-info h3 {
+  margin: 8px 0 0;
+  color: var(--text);
+  font-size: clamp(17px, 2vw, 24px);
+}
+
+.gallery-arrow {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  color: var(--barca-gold);
+  font-size: 20px;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 250px;
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery-section {
+    padding: 80px 7%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 280px;
+  }
+
+  .gallery-card:nth-child(1),
+  .gallery-card:nth-child(4) {
+    grid-row: span 1;
+  }
+}
+
 @media (max-width: 900px) {
   .statistics-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -483,6 +691,36 @@ a {
 @media (max-width: 700px) {
   .statistics-section {
     padding: 75px 7%;
+  }
+
+  .navbar {
+    padding: 20px 6%;
+    flex-wrap: wrap;
+  }
+
+  /* TIMELINE RESPONSIVE */
+  .timeline-section {
+    padding: 80px 6%;
+  }
+
+  .timeline-list {
+    margin-top: 55px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 45px 1fr;
+    gap: 20px;
+    padding-bottom: 55px;
+  }
+
+  .timeline-list::before {
+    left: 21px;
+  }
+
+  .timeline-marker {
+    width: 43px;
+    height: 43px;
+    font-size: 10px;
   }
 }
 

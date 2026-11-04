@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 
 
 const legends = [
@@ -24,6 +25,70 @@ const legends = [
   },
 ];
 
+const timeline = [
+  {
+    year: "1899",
+    title: "The Beginning",
+    description:
+      "FC Barcelona was founded by Joan Gamper and a group of football enthusiasts in the city of Barcelona.",
+    label: "THE FOUNDATION",
+  },
+  {
+    year: "1992",
+    title: "A Dream in Wembley",
+    description:
+      "Barcelona won its first European Cup after defeating Sampdoria at Wembley Stadium.",
+    label: "FIRST EUROPEAN CUP",
+  },
+  {
+    year: "2009",
+    title: "A Historic Six Trophies",
+    description:
+      "Under Pep Guardiola, Barcelona achieved an extraordinary six-title calendar year.",
+    label: "THE SIXTUPLE",
+  },
+  {
+    year: "2015",
+    title: "A Second Treble",
+    description:
+      "Barcelona won La Liga, the Copa del Rey, and the UEFA Champions League in one season.",
+    label: "TREBLE WINNERS",
+  },
+];
+
+const gallery = [
+  {
+    image: "/images/barcelona-stadium.jpg",
+    category: "THE HOME",
+    title: "A Home Like No Other",
+  },
+  {
+    image: "/images/barcelona-stadium-2.jpg",
+    category: "THE STADIUM",
+    title: "The Spirit of Camp Nou",
+  },
+  {
+    image: "/images/messi-2.jpg",
+    category: "THE LEGENDS",
+    title: "Moments of Greatness",
+  },
+  {
+    image: "/images/xavi-2.jpg",
+    category: "THE MASTERS",
+    title: "The Art of Football",
+  },
+  {
+    image: "/images/iniesta-2.jpg",
+    category: "THE MAGIC",
+    title: "Elegance in Motion",
+  },
+  {
+    image: "/images/barcelona-stadium-3.jpg",
+    category: "THE PASSION",
+    title: "United by the Colours",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -35,6 +100,8 @@ export default function Home() {
         <div className="nav-links">
           <a href="#about">Our Story</a>
           <a href="#legends">Legends</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#gallery">Gallery</a>
           <a href="#legacy">Legacy</a>
         </div>
 
@@ -100,7 +167,7 @@ export default function Home() {
         </p>
       </section>
 
-      
+
       <section id="statistics" className="statistics-section">
         <div className="statistics-heading">
           <p className="eyebrow">THE NUMBERS BEHIND THE LEGACY</p>
@@ -182,6 +249,69 @@ export default function Home() {
         <span className="legend-arrow" aria-hidden="true">
           ↗
         </span>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section id="timeline" className="timeline-section">
+  <div className="section-heading">
+    <div>
+      <p className="eyebrow">A JOURNEY THROUGH TIME</p>
+      <h2>Moments that made history.</h2>
+    </div>
+    <span>1899 — FOREVER</span>
+  </div>
+
+  <div className="timeline-list">
+    {timeline.map((item, index) => (
+      <article className="timeline-item" key={item.year}>
+        <div className="timeline-marker">
+          <span>{String(index + 1).padStart(2, "0")}</span>
+        </div>
+
+        <div className="timeline-content">
+          <p className="timeline-label">{item.label}</p>
+          <span className="timeline-year">{item.year}</span>
+          <h3>{item.title}</h3>
+          <p className="timeline-description">
+            {item.description}
+          </p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+<section id="gallery" className="gallery-section">
+  <div className="section-heading">
+    <div>
+      <p className="eyebrow">THE VISUAL ARCHIVE</p>
+      <h2>Captured in history.</h2>
+    </div>
+    <span>MEMORIES THAT LAST FOREVER</span>
+  </div>
+
+  <div className="gallery-grid">
+    {gallery.map((item, index) => (
+      <article className="gallery-card" key={item.image}>
+        <img
+          src={item.image}
+          alt={item.title}
+          className="gallery-image"
+        />
+
+        <div className="gallery-overlay" />
+
+        <span className="gallery-index">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
+        <div className="gallery-info">
+          <p>{item.category}</p>
+          <h3>{item.title}</h3>
+        </div>
+
+        <span className="gallery-arrow">↗</span>
       </article>
     ))}
   </div>
