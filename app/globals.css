@@ -788,3 +788,114 @@ a {
     padding: 30px 7%;
   }
 }
+
+/* EXTRA RESPONSIVE IMPROVEMENTS */
+@media (max-width: 480px) {
+  /* NAVBAR */
+  .navbar {
+    padding: 16px 6%;
+    gap: 14px;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 16px;
+    row-gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .nav-cta {
+    padding: 9px 10px;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: auto;
+    padding: 82px 7% 32px;
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 12vw, 56px);
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-decoration {
+    display: none;
+  }
+
+  .hero-caption {
+    flex-wrap: wrap;
+    margin-top: 55px;
+    line-height: 1.6;
+  }
+
+  /* STATISTICS */
+  .statistics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .stat-card {
+    min-height: 190px;
+    padding: 16px;
+  }
+
+  .stat-number {
+    font-size: clamp(30px, 8vw, 40px);
+    letter-spacing: -1px;
+  }
+
+  /* LEGENDS */
+  .legend-card {
+    min-height: 360px;
+  }
+
+  /* TIMELINE */
+  .timeline-item {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .timeline-marker {
+    width: 39px;
+    height: 39px;
+  }
+
+  .timeline-list::before {
+    left: 19px;
+  }
+
+  .timeline-description {
+    font-size: 13px;
+  }
+
+  /* GALLERY */
+  .gallery-grid {
+    grid-auto-rows: 240px;
+  }
+
+  .gallery-info {
+    left: 16px;
+    right: 16px;
+    bottom: 18px;
+  }
+
+  /* FOOTER */
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
