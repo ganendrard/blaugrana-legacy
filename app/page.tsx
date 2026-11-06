@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import Reveal from "./components/Reveal";
 
 const legends = [
   {
@@ -151,21 +152,30 @@ export default function Home() {
         </div>
       </section>
 
+      
       <section id="about" className="about-section">
-        <p className="eyebrow">MORE THAN FOOTBALL</p>
-        <h2>
-          One club.
-          <br />
-          <span>Countless emotions.</span>
-        </h2>
+        <Reveal delay={0.1}>
+          <p className="eyebrow">MORE THAN FOOTBALL</p>
+        </Reveal>
 
-        <p>
+        <Reveal delay={0.2}>
+          <h2>
+            One club.
+            <br />
+            <span>Countless emotions.</span>
+          </h2>
+        </Reveal>
+
+        <Reveal delay={0.3}>
+          <p>
           Born in Barcelona in 1899, FC Barcelona represents
           more than a game. It is a symbol of identity,
           creativity, courage, and a philosophy passed
           from one generation to the next.
-        </p>
+          </p>
+        </Reveal>
       </section>
+
 
 
       <section id="statistics" className="statistics-section">
