@@ -234,44 +234,46 @@ export default function Home() {
   </div>
 </section>
 
-
-
 <section id="legends" className="legends-section">
-  <div className="section-heading">
-    <div>
-      <p className="eyebrow">THE IMMORTALS</p>
-      <h2>Legends of Barça.</h2>
+  <Reveal delay={0.1}>
+    <div className="section-heading">
+      <div>
+        <p className="eyebrow">THE IMMORTALS</p>
+        <h2>Legends of Barça.</h2>
+      </div>
+      <span>1899 — FOREVER</span>
     </div>
-    <span>1899 — FOREVER</span>
-  </div>
+  </Reveal>
 
   <div className="legends-grid">
-    {legends.map((legend) => (
-      <article className="legend-card" key={legend.name}>
-        <img
-          className="legend-image"
-          src={legend.image}
-          alt={legend.name}
-        />
+    {legends.map((legend, index) => (
+      <Reveal delay={0.1 + index * 0.15} key={legend.name}>
+        <article className="legend-card">
+          <img
+            className="legend-image"
+            src={legend.image}
+            alt={legend.name}
+          />
 
-        <div className="legend-overlay" />
+          <div className="legend-overlay" />
 
-        <span className="legend-number">
-          {legend.number}
-        </span>
+          <span className="legend-number">
+            {legend.number}
+          </span>
 
-        <div className="legend-info">
-          <p className="legend-era">{legend.era}</p>
-          <h3>{legend.name}</h3>
-          <p className="legend-description">
-            {legend.description}
-          </p>
-        </div>
+          <div className="legend-info">
+            <p className="legend-era">{legend.era}</p>
+            <h3>{legend.name}</h3>
+            <p className="legend-description">
+              {legend.description}
+            </p>
+          </div>
 
-        <span className="legend-arrow" aria-hidden="true">
-          ↗
-        </span>
-      </article>
+          <span className="legend-arrow" aria-hidden="true">
+            ↗
+          </span>
+        </article>
+      </Reveal>
     ))}
   </div>
 </section>
