@@ -178,50 +178,62 @@ export default function Home() {
 
 
 
-      <section id="statistics" className="statistics-section">
-        <div className="statistics-heading">
-          <p className="eyebrow">THE NUMBERS BEHIND THE LEGACY</p>
-          <h2>
-            A legacy measured
-            <br />
-            <span>in greatness.</span>
-          </h2>
-          <p className="statistics-description">
-            More than a century of history, identity, and unforgettable
-            moments that shaped the world of football.
-          </p>
-        </div>
+      
+<section id="statistics" className="statistics-section">
+  <Reveal delay={0.1}>
+    <div className="statistics-heading">
+      <p className="eyebrow">THE NUMBERS BEHIND THE LEGACY</p>
+      <h2>
+        A legacy measured
+        <br />
+        <span>in greatness.</span>
+      </h2>
+      <p className="statistics-description">
+        More than a century of history, identity, and unforgettable
+        moments that shaped the world of football.
+      </p>
+    </div>
+  </Reveal>
 
-        <div className="statistics-grid">
-          <article className="stat-card">
-            <span className="stat-label">ESTABLISHED</span>
-            <p className="stat-number">1899</p>
-            <h3>Year Founded</h3>
-            <p className="stat-note">Born in Barcelona, Catalonia.</p>
-          </article>
+  <div className="statistics-grid">
+    <Reveal delay={0.1}>
+      <article className="stat-card">
+        <span className="stat-label">ESTABLISHED</span>
+        <p className="stat-number">1899</p>
+        <h3>Year Founded</h3>
+        <p className="stat-note">Born in Barcelona, Catalonia.</p>
+      </article>
+    </Reveal>
 
-          <article className="stat-card">
-            <span className="stat-label">OUR HISTORY</span>
-            <p className="stat-number">125<span>+</span></p>
-            <h3>Years of History</h3>
-            <p className="stat-note">A legacy across generations.</p>
-          </article>
+    <Reveal delay={0.2}>
+      <article className="stat-card">
+        <span className="stat-label">OUR HISTORY</span>
+        <p className="stat-number">125<span>+</span></p>
+        <h3>Years of History</h3>
+        <p className="stat-note">A legacy across generations.</p>
+      </article>
+    </Reveal>
 
-          <article className="stat-card">
-            <span className="stat-label">THE GAME</span>
-            <p className="stat-number">11</p>
-            <h3>Players per Side</h3>
-            <p className="stat-note">One team, one shared purpose.</p>
-          </article>
+    <Reveal delay={0.3}>
+      <article className="stat-card">
+        <span className="stat-label">THE GAME</span>
+        <p className="stat-number">11</p>
+        <h3>Players per Side</h3>
+        <p className="stat-note">One team, one shared purpose.</p>
+      </article>
+    </Reveal>
 
-          <article className="stat-card">
-            <span className="stat-label">OUR IDENTITY</span>
-            <p className="stat-number">1</p>
-            <h3>Club. One Identity.</h3>
-            <p className="stat-note">Més que un club.</p>
-          </article>
-        </div>
-      </section>
+    <Reveal delay={0.4}>
+      <article className="stat-card">
+        <span className="stat-label">OUR IDENTITY</span>
+        <p className="stat-number">1</p>
+        <h3>Club. One Identity.</h3>
+        <p className="stat-note">Més que un club.</p>
+      </article>
+    </Reveal>
+  </div>
+</section>
+
 
 
 <section id="legends" className="legends-section">
