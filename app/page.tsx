@@ -278,34 +278,43 @@ export default function Home() {
   </div>
 </section>
 
+
 <section id="timeline" className="timeline-section">
-  <div className="section-heading">
-    <div>
-      <p className="eyebrow">A JOURNEY THROUGH TIME</p>
-      <h2>Moments that made history.</h2>
+  <Reveal delay={0.1}>
+    <div className="section-heading">
+      <div>
+        <p className="eyebrow">A JOURNEY THROUGH TIME</p>
+        <h2>Moments that made history.</h2>
+      </div>
+      <span>1899 — FOREVER</span>
     </div>
-    <span>1899 — FOREVER</span>
-  </div>
+  </Reveal>
 
   <div className="timeline-list">
     {timeline.map((item, index) => (
-      <article className="timeline-item" key={item.year}>
-        <div className="timeline-marker">
-          <span>{String(index + 1).padStart(2, "0")}</span>
-        </div>
+      <Reveal
+        delay={0.1 + index * 0.15}
+        key={item.year}
+      >
+        <article className="timeline-item">
+          <div className="timeline-marker">
+            <span>{String(index + 1).padStart(2, "0")}</span>
+          </div>
 
-        <div className="timeline-content">
-          <p className="timeline-label">{item.label}</p>
-          <span className="timeline-year">{item.year}</span>
-          <h3>{item.title}</h3>
-          <p className="timeline-description">
-            {item.description}
-          </p>
-        </div>
-      </article>
+          <div className="timeline-content">
+            <p className="timeline-label">{item.label}</p>
+            <span className="timeline-year">{item.year}</span>
+            <h3>{item.title}</h3>
+            <p className="timeline-description">
+              {item.description}
+            </p>
+          </div>
+        </article>
+      </Reveal>
     ))}
   </div>
 </section>
+
 <section id="gallery" className="gallery-section">
   <div className="section-heading">
     <div>
