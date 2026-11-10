@@ -316,36 +316,44 @@ export default function Home() {
 </section>
 
 <section id="gallery" className="gallery-section">
-  <div className="section-heading">
-    <div>
-      <p className="eyebrow">THE VISUAL ARCHIVE</p>
-      <h2>Captured in history.</h2>
+  <Reveal delay={0.1}>
+    <div className="section-heading">
+      <div>
+        <p className="eyebrow">THE VISUAL ARCHIVE</p>
+        <h2>Captured in history.</h2>
+      </div>
+      <span>MEMORIES THAT LAST FOREVER</span>
     </div>
-    <span>MEMORIES THAT LAST FOREVER</span>
-  </div>
+  </Reveal>
 
   <div className="gallery-grid">
     {gallery.map((item, index) => (
-      <article className="gallery-card" key={item.image}>
-        <img
-          src={item.image}
-          alt={item.title}
-          className="gallery-image"
-        />
+      <Reveal
+        delay={0.1 + index * 0.1}
+        key={item.image}
+        className="gallery-reveal"
+      >
+        <article className="gallery-card">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="gallery-image"
+          />
 
-        <div className="gallery-overlay" />
+          <div className="gallery-overlay" />
 
-        <span className="gallery-index">
-          {String(index + 1).padStart(2, "0")}
-        </span>
+          <span className="gallery-index">
+            {String(index + 1).padStart(2, "0")}
+          </span>
 
-        <div className="gallery-info">
-          <p>{item.category}</p>
-          <h3>{item.title}</h3>
-        </div>
+          <div className="gallery-info">
+            <p>{item.category}</p>
+            <h3>{item.title}</h3>
+          </div>
 
-        <span className="gallery-arrow">↗</span>
-      </article>
+          <span className="gallery-arrow">↗</span>
+        </article>
+      </Reveal>
     ))}
   </div>
 </section>
