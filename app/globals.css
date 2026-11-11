@@ -31,21 +31,42 @@ a {
   text-decoration: none;
 }
 
+
+/* NAVBAR REFINEMENT */
+
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
   min-height: 82px;
   padding: 0 7%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
+
   border-bottom: 1px solid #ffffff18;
-  background: var(--dark);
+  background: rgba(8, 11, 20, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .brand {
-  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  font-size: 23px;
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -1.2px;
+
+  transition: transform 0.3s ease;
+}
+
+.brand:hover {
+  transform: translateY(-2px);
 }
 
 .brand span {
@@ -54,19 +75,77 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: clamp(18px, 2.5vw, 34px);
 }
 
-.nav-links a,
-.nav-cta {
-  font-size: 13px;
+.nav-links a {
+  position: relative;
+  padding: 10px 0;
+
   color: var(--muted);
-  transition: color 0.2s ease;
+  font-size: 13px;
+  font-weight: 500;
+
+  transition: color 0.25s ease;
 }
 
-.nav-links a:hover,
-.nav-cta:hover {
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--barca-gold);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  padding: 12px 17px;
+
+  border: 1px solid #edbb0080;
+  border-radius: 3px;
+
+  background: #edbb0010;
   color: var(--barca-gold);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-cta:hover {
+  color: var(--dark);
+  background: var(--barca-gold);
+  border-color: var(--barca-gold);
+  transform: translateY(-2px);
+}
+
+.navbar a:focus-visible {
+  outline: 2px solid var(--barca-gold);
+  outline-offset: 5px;
 }
 
 .nav-cta {
